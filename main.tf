@@ -13,12 +13,13 @@ module "vpc" {
 }
 
 module "subnets" {
-  source     = "cloudposse/dynamic-subnets/aws"
-  version    = "0.39.3"
-  namespace  = var.namespace
-  stage      = var.stage
-  name       = "main-subnet"
-  vpc_id     = module.vpc.vpc_id
-  igw_id     = module.vpc.igw_id
-  cidr_block = "10.0.0.0/16"
+  source             = "cloudposse/dynamic-subnets/aws"
+  version            = "0.39.3"
+  namespace          = var.namespace
+  stage              = var.stage
+  name               = "main-subnet"
+  vpc_id             = module.vpc.vpc_id
+  igw_id             = module.vpc.igw_id
+  availability_zones = var.availability_zones
+  cidr_block         = "10.0.0.0/16"
 }
