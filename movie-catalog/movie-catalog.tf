@@ -13,6 +13,7 @@ module "elastic_beanstalk_environment" {
   namespace                          = var.namespace
   stage                              = var.stage
   name                               = var.name
+  region                             = var.region
   description                        = "Movie Catalog Beanstalk Environment"
   availability_zone_selector         = "Any 2"
   elastic_beanstalk_application_name = module.elastic_beanstalk_application.elastic_beanstalk_application_name
