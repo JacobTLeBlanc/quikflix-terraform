@@ -1,5 +1,5 @@
 module "movie-catalog" {
-  source = "./movie-catalog/movie-catalog.tf"
+  source = "./movie-catalog"
 
   namespace = var.namespace
   name      = var.movie_catalog_name
