@@ -4,7 +4,7 @@ module "dynamodb_movie_catalog" {
 
   namespace                    = var.namespace
   stage                        = var.stage
-  name                         = "movie_info"
+  name                         = "movie-info"
   hash_key                     = "Id"
   range_key                    = ""
   autoscale_write_target       = 50
