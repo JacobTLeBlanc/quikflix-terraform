@@ -28,26 +28,7 @@ module "elastic_beanstalk_environment" {
   vpc_id               = var.vpc_id
   loadbalancer_subnets = var.public_subnet_ids
   application_subnets  = var.private_subnet_ids
-  security_group_rules = [
-    {
-      type                     = "egress"
-      from_port                = 0
-      to_port                  = 65535
-      protocol                 = "-1"
-      cidr_blocks              = ["0.0.0.0/0"]
-      source_security_group_id = null
-      description              = "Allow all outbound traffic"
-    },
-    {
-      type                     = "ingress"
-      from_port                = 0
-      to_port                  = 65535
-      protocol                 = "-1"
-      source_security_group_id = [var.vpc_security_group_id]
-      cidr_blocks              = null
-      description              = "Allow all ingress traffic from trusted Security Groups"
-    },
-  ]
+
   prefer_legacy_service_policy = false
 
   solution_stack_name = "64bit Amazon Linux 2018.03 v2.12.17 running Docker 18.06.1-ce"
