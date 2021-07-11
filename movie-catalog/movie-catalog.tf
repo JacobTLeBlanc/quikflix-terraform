@@ -31,5 +31,5 @@ module "elastic_beanstalk_environment" {
 
   prefer_legacy_service_policy = false
 
-  solution_stack_name = "64bit Amazon Linux 2018.03 v2.12.17 running Docker 18.06.1-ce"
+  solution_stack_name = "64bit Amazon Linux 2 v3.2.2 running Corretto 11"
 }
